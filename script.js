@@ -1,5 +1,15 @@
 const canvas = document.getElementById("fireworksCanvas");
 const ctx = canvas.getContext("2d");
+const loveMessage = `Doorva Garg, Happy New Year!!! You are actually the Sweetest person I have ever known in my whole life. The way you uplift my mood with a couple minutes is actually INSANE. I am so impressed that you broke through the walls I put up and am just so happy that You choose me still after seeing my imperfections, hehehehe you will still think I'm "perfect" LOLLLL.
+
+Doorva Garg, You are genuinely the Sweetest, most ADOORABLE, Cutie Patootie EVERRRR. You are just SOOO KUCHU PUCHUUUUUU I don't know what more can describe You. The words don't exist because they cannot begin to describe How Great You areeee Doorva.
+
+Doorva Garg. My Girlfriend. My Sweetie. My Sugar Plum. My Darling. My Kuchu Puchuuuuuuu. My Door. My Girl. My Woman. My. Wife.
+
+HAPPY NEW YEAR BABYYYYYY AND I AMMM SOOOO SOOOO SOOOOOOOOO HAPPY AND HONORED THAT I GET TO START THE NEW YEAR WITH YOUUUUUUUU.
+
+I LOVE YOUUUUU DOORVA 😘💋`;
+
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -99,6 +109,27 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+function typeText(element, text, speed = 30) {
+    let i = 0;
+    element.textContent = "";
+    element.style.display = "block";
+
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
 document.getElementById("startBtn").addEventListener("click", () => {
     if (!running) {
         running = true;
@@ -109,8 +140,6 @@ document.getElementById("startBtn").addEventListener("click", () => {
 
     document.getElementById("nyImage").style.display = "block";
 
-    document.getElementById("nyText").style.display = "block";
-
-    document.getElementById("nyText").textContent =
-        "💖 Happy New Year 2026, my Kuchu Puchu Darling 💖";
+    const textEl = document.getElementById("nyText");
+    typeText(textEl, loveMessage, 25);
 });

@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    overflow: hidden;
     font-family: Arial, sans-serif;
     background-color: pink;
 }
@@ -21,15 +20,20 @@ body {
 
 #nyText {
     display: none;
+    color: white;
+    white-space: pre-wrap;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+    line-height: 1.6;
     position: relative;
     z-index: 2;
-    color: white;
-}
 
+    position: relative;
+    z-index: 2;
+}
 
 canvas {
     position: fixed;
